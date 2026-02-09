@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Fee Payment</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #020617, #0f172a);
+        color: #111;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 80px auto;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 6px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        font-size: 14px;
+        border: 1px solid #000;
+        border-radius: 3px;
+    }
+
+    input[readonly] {
+        background: #f0f0f0;
+    }
+
+    .btc-box {
+        background: #f8f8f8;
+        border: 1px dashed #000;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 13px;
+        word-break: break-all;
+    }
+
+    .btc-box strong {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .copy-btn {
+        margin-top: 10px;
+        padding: 8px;
+        width: 100%;
+        border: none;
+        background: #0f172a;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .copy-btn:hover {
+        background: #020617;
+    }
+
+    .copied {
+        text-align: center;
+        color: green;
+        font-size: 13px;
+        margin-top: 8px;
+        display: none;
+    }
+
+    .btn {
+        margin-top: 25px;
+        width: 100%;
+        padding: 14px;
+        background: #020617;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn:hover {
+        background: #0f172a;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .contact-box {
+        margin-top: 25px;
+        padding: 15px;
+        background: #e7ffe7;
+        border: 1px solid #0a7a0a;
+        font-size: 14px;
+    }
+
+    .footer {
+        margin-top: 25px;
+        font-size: 12px;
+        text-align: center;
+        color: #444;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Registration Fee</h1>
+<div class="subtitle">
+Complete your registration by paying the required fee
+</div>
+
+<label>Registration Fee Amount (USD)</label>
+<input type="number" value="1500" readonly>
+
+<label>Payment Method</label>
+<select>
+    <option>Bitcoin (BTC)</option>
+</select>
+
+<div class="btc-box">
+    <strong>Bitcoin Wallet Address</strong>
+    <span id="btcAddress">
+        bc1qh22udvvn8vfynn5fvv94rjdpr97qeqyfc0xjjx
+    </span>
+
+    <button class="copy-btn" onclick="copyBTC()">
+        Copy Bitcoin Address
+    </button>
+
+    <div class="copied" id="copiedMsg">
+        ✔ Wallet address copied
+    </div>
+</div>
+
+<button class="btn" onclick="showContact()">
+I Have Paid
+</button>
+
+<div class="contact-box hidden" id="contactInfo">
+    <strong>Payment Submitted</strong><br><br>
+    Please contact our manager for fast confirmation:<br><br>
+    📧 <strong>Email:</strong> manager@example.com<br>
+    📱 <strong>WhatsApp:</strong> +1 234 567 8901
+</div>
+
+<div class="footer">
+Bitcoin payments are confirmed manually. Please send the exact amount.
+</div>
+
+</div>
+
+<script>
+function copyBTC() {
+    const address = document.getElementById("btcAddress").innerText.trim();
+    navigator.clipboard.writeText(address);
+    document.getElementById("copiedMsg").style.display = "block";
+}
+
+function showContact() {
+    document.getElementById("contactInfo").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

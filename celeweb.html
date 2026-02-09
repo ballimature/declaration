@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Dating Declaration</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Times New Roman", serif;
+        background: linear-gradient(135deg, #0f172a, #020617);
+        color: #111;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 6px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-top: 30px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    label {
+        font-size: 14px;
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 5px;
+        border: 1px solid #000;
+        border-radius: 3px;
+    }
+
+    textarea {
+        resize: none;
+        height: 90px;
+    }
+
+    .checkbox {
+        margin-top: 20px;
+    }
+
+    .checkbox input {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .submit-btn {
+        margin-top: 30px;
+        width: 100%;
+        padding: 14px;
+        background: #020617;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+        background: #0f172a;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 12px;
+        text-align: center;
+        color: #444;
+    }
+
+    .success {
+        display: none;
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Confidential Dating Declaration</h1>
+<div class="subtitle">
+Official Oath of Commitment, Privacy & Personal Conduct
+</div>
+
+<form id="declarationForm">
+
+<h2>Declarant Information (Boyfriend)</h2>
+
+<label>Full Legal Name</label>
+<input type="text" required>
+
+<label>Date of Birth</label>
+<input type="date" required>
+
+<label>Nationality</label>
+<input type="text" required>
+
+<label>Government Issued ID (Type & Number)</label>
+<input type="text" required>
+
+<label>Residential Address</label>
+<textarea required></textarea>
+
+<label>Phone Number</label>
+<input type="tel" required>
+
+<label>Email Address</label>
+<input type="email" required>
+
+<h2>Protected Party (Celebrity)</h2>
+
+<label>Full Name</label>
+<input type="text" required>
+
+<h2>Declaration & Oath</h2>
+
+<p>
+I, the undersigned Declarant, voluntarily and under oath declare that I intend
+to engage in a serious romantic relationship with the Protected Party.
+I acknowledge her status as a public figure and agree to uphold strict
+confidentiality, respect, and personal responsibility at all times.
+</p>
+
+<p>
+I solemnly swear that I will not disclose, publish, leak, sell, or share any
+private information, images, videos, communications, locations, or personal
+details relating to the Protected Party without her prior written consent.
+</p>
+
+<p>
+I agree to respect all personal boundaries, consent, and privacy, and confirm
+that I will never engage in harassment, manipulation, threats, stalking, or
+abusive behavior of any form.
+</p>
+
+<p>
+I understand that any violation of this declaration may result in immediate
+termination of the relationship and possible legal action under applicable
+laws.
+</p>
+
+<div class="checkbox">
+    <input type="checkbox" required>
+    I confirm that I have read, understood, and agree to all terms above.
+</div>
+
+<h2>Electronic Signature</h2>
+
+<label>Full Name (Signature)</label>
+<input type="text" required>
+
+<label>Date of Declaration</label>
+<input type="date" required>
+
+<button type="submit" class="submit-btn">
+Submit Declaration
+</button>
+
+</form>
+
+<div class="success" id="successMsg">
+Declaration submitted successfully.
+</div>
+
+<div class="footer">
+This document is confidential and legally sensitive. Unauthorized disclosure is prohibited.
+</div>
+
+</div>
+
+<script>
+document.getElementById("declarationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
