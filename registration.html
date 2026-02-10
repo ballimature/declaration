@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Fee Payment</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    margin: 0;
+}
+.container {
+    max-width: 500px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 6px;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+}
+.btc-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #000;
+    word-break: break-all;
+}
+.copy-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #0f172a;
+    color: #fff;
+    border: none;
+}
+.btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background: #020617;
+    color: #fff;
+    border: none;
+}
+.hidden { display: none; }
+.contact-box {
+    margin-top: 25px;
+    padding: 15px;
+    background: #e7ffe7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Registration Fee</h1>
+
+<label>Registration Fee Amount (USD)</label>
+<input type="number" value="500" readonly>
+
+<div class="btc-box">
+<strong>Bitcoin Wallet Address</strong><br>
+<span id="btcAddress">
+bc1qh22udvvn8vfynn5fvv94rjdpr97qeqyfc0xjjx
+</span>
+
+<button class="copy-btn" onclick="copyBTC()">
+Copy Bitcoin Address
+</button>
+
+<div id="copiedMsg" class="hidden">✔ Address Copied</div>
+</div>
+
+<button class="btn" onclick="showContact()">
+I Have Paid
+</button>
+
+<div class="contact-box hidden" id="contactInfo">
+<strong>Payment Submitted</strong><br><br>
+Contact manager for confirmation:<br>
+📧 manager@example.com<br>
+📱 +1 234 567 8901
+</div>
+
+</div>
+
+<script>
+function copyBTC() {
+    const text = document.getElementById("btcAddress").innerText;
+    navigator.clipboard.writeText(text);
+    document.getElementById("copiedMsg").classList.remove("hidden");
+}
+function showContact() {
+    document.getElementById("contactInfo").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
